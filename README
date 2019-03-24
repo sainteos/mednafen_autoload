@@ -1,0 +1,6 @@
+#Mednafen Autoload
+### A python script that, given a folder of PSX roms, will start one at random, and change to another random game in a certain time period, indefinitely
+
+This script works with .cue/.bin, .ccd/.sub/.img, and .m3u for multi-disc games.
+
+USAGE: python mauto.py [folder with roms]
