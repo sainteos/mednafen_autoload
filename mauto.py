@@ -41,7 +41,7 @@ elif len(sys.argv) == 3 and sys.argv[1] == "-d":
   rom_files = open(sys.argv[2], "w")
 
 while 1:
-  mednafen_process = subprocess.Popen(["mednafen", random.choice(rom_files).strip()], shell=True)
+  mednafen_process = subprocess.Popen(["mednafen", working_directory + random.choice(rom_files).strip()], shell=True)
   start = datetime.now()
   #delta of 20 minutes between changes
   delta = timedelta(minutes=20)
