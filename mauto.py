@@ -7,12 +7,13 @@ import time
 import subprocess
 
 rom_files = []
-working_directory = subprocess.check_output(["pwd"]).strip()
+working_directory = subprocess.check_output(["cd"]).strip()
+print "Working Directory: " + working_directory
 # #move cfg to .mednafen
-subprocess.check_output(["touch", "psx.cfg"])
-subprocess.check_output("echo \"autosave 1\" >> psx.cfg", shell=True)
-subprocess.check_output("echo \"filesys.path_state " + working_directory + "/save_states\" >> psx.cfg", shell=True)
-subprocess.check_output("mv psx.cfg ~/.mednafen/", shell=True)
+subprocess.check_output("type nul >> psx.cfg", shell=True)
+subprocess.check_output("echo autosave 1 >> psx.cfg", shell=True)
+subprocess.check_output("echo filesys.path_state " + working_directory + "\\save_states >> psx.cfg", shell=True)
+subprocess.check_output("mv psx.cfg $HOME\\.mednafen\\", shell=True)
 
 if len(sys.argv) == 2:
   rom_folder = sys.argv[1]
