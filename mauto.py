@@ -7,7 +7,7 @@ import time
 import subprocess
 
 rom_files = []
-working_directory = subprocess.check_output(["cd"]).strip()
+working_directory = subprocess.check_output("cd", shell=True).strip()
 print "Working Directory: " + working_directory
 # #move cfg to .mednafen
 subprocess.check_output("type nul >> psx.cfg", shell=True)
