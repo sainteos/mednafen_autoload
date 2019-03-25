@@ -36,7 +36,7 @@ if len(sys.argv) == 2:
   #Add the m3u's to the possible roms
   rom_files = rom_files + m3u_files
 
-  rom_files = map(lambda file: '/' + rom_folder + file, rom_files)
+  rom_files = map(lambda file: '\\' + rom_folder + file, rom_files)
 elif len(sys.argv) == 3 and sys.argv[1] == "-d":
   rom_files = open(sys.argv[2], "w")
 
