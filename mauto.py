@@ -12,8 +12,8 @@ working_directory = subprocess.check_output("cd", shell=True).strip()
 print "Working Directory: " + working_directory
 # #move cfg to .mednafen
 subprocess.check_output("type nul > psx.cfg", shell=True)
-subprocess.check_output("echo autosave 1>> psx.cfg", shell=True)
-subprocess.check_output("echo filesys.path_state " + working_directory + "\\save_states>> psx.cfg", shell=True)
+subprocess.check_output("echo \"autosave 1\">> psx.cfg", shell=True)
+subprocess.check_output("echo \"filesys.path_state " + working_directory + "\\save_states\">> psx.cfg", shell=True)
 subprocess.check_output("move psx.cfg D:\\Roms\\Mednafen", shell=True)
 #subprocess.check_output("move psx.cfg " + home_directory + "\\.mednafen\\", shell=True)
 
